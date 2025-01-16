@@ -4,7 +4,7 @@
 // 2. Ensure the functionality remains the same after converting.
 
 
-class Person {
+/* class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -17,8 +17,23 @@ class Person {
   greet() {
     console.log(`Hello, my name is ${this.getFullName()}.`);
   }
+} */
+
+//Class into a Function Prototype
+function Person (firstName, lastName){
+  this._firstName = firstName
+  this._lastName = lastName
 }
 
+//getFullName
+Person.prototype.getFullName = function() {
+  return `${this._firstName} ${this._lastName}`
+}
+
+//greet
+Person.prototype.greet = function() {
+  console.log(` Hello, my name is  ${this.getFullName()}.`)
+}
 
 // Test the Person constructor function
 const john = new Person("John", "Doe");
