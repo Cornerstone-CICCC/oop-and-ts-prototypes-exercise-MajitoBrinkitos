@@ -6,7 +6,16 @@
 
 
 // YOUR CODE HERE
+//constructor function Vehicle
+function Vehicle(make, model){
+    this._make = make
+    this._model = model
+}
 
+//method startEngine on the prototype of Vehicle
+Vehicle.prototype.startEngine = function (){
+    console.log (`The ${this._make} ${this._model} engine is starting.`)
+}
 
 
 
